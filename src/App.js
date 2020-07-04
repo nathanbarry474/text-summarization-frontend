@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import "./App.css";
+import styled from 'styled-components';
 import axios from "axios";
+
+const Page = styled.div`
+  text-align: center;
+`;
+
+
 function App() {
   const [summary, setSummary] = useState(null);
   const [text, setText] = useState(null);
@@ -23,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <Page>
       <h2>Text Summarizer</h2>
       <textarea
         className="input"
@@ -32,7 +38,7 @@ function App() {
       />
       <button onClick={textUploadHandler}>Submit</button>
       <h2>{summary}</h2>
-    </div>
+    </Page>
   );
 }
 
